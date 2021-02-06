@@ -1,0 +1,55 @@
+Intro to HTML forms
+
+Cool so hopefully with the basics out of the way we can return to web development
+
+Forms are the most common way to do HTTP requests from a web page
+
+ <form action="/action_page.php" method="get">
+  <label for="fname">First name:</label>
+  <input type="text" id="fname" name="fname"><br><br>
+  <label for="lname">Last name:</label>
+  <input type="text" id="lname" name="lname"><br><br>
+  <input type="submit" value="Submit">
+</form> 
+
+There are various input types you can do. Learn text inputs and hidden inputs
+
+<input type="hidden" id="custId" name="custId" value="3487"> 
+
+action is the destination URL of the form. Method is the HTTP request type ie GET, POST, etc.
+
+
+name is used to determine what the variable is named in the requests
+
+Create a .html page like this
+
+<html>
+<body>
+your stuff goes here
+</body>
+</html>
+
+Save it as a .html file and open it in a web browser.
+
+https://webhook.site/
+
+This website allows you to create an API endpoint which will receive your HTTP requests and display them.
+
+Create the following forms on the HTML page, put in your webhook.site URL 
+and then take a screenshot of the HTTP requests from that page and post it in #standup
+
+a POST form with just a "name" text input
+a POST form with just a hidden input named "mysecretvalue" - value of it can be anything
+
+a PUT form with an integer input "lucky_number"
+
+a POST form with "my_birthday" JQueryUI datepicker
+
+Use a JQueryUI date input
+https://www.tutorialspoint.com/jqueryui/jqueryui_environment_setup.htm
+
+You can either pull the JqueryUI code from a CDN or host it locally. Include it in your app with a script tag. Google for more instructions
+
+This is the most popular datepicker because it works perfectly on all web browsers
+
+

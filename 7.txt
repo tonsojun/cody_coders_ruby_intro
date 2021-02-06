@@ -1,0 +1,43 @@
+HTTP requests with Ruby
+
+https://github.com/jnunemaker/httparty
+
+Install this gem and require it in your file.
+
+Use it like this:
+
+response = HTTParty.get('http://api.stackexchange.com/2.2/questions?site=stackoverflow')
+puts response
+
+options = {
+  body: {
+    pear: { # your resource
+      foo: '123', # your columns/data
+      bar: 'second',
+      baz: 'last thing'
+    }
+  }
+}
+
+puts response
+response HTTParty.post('/pears.xml', options)
+
+Write HTTP requests which will send the following requests to webhook.site and then take a screenshot of the received requests
+
+a GET request
+
+A POST request with the parameters my_name: 'Mark', my_hobby: "Soccer"
+
+a POST request - with the parameter - current_time: Time.now
+
+Time is really easy to work with in IN RAILS so use a RAILS CONSOLE for the below. To do that, run "rails c" from the directory
+Of a rails app
+
+five_days_ago: 5.days.ago
+
+one_year_ago: 1.year.ago
+
+two_years_from_now: 2.years.from_now
+
+Send all of the above to webhook.site
+
