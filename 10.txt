@@ -1,0 +1,6 @@
+Redo the previous assignment - with the student names - so that the keys of the values in the students session hash are the student's names.
+Use strings.
+
+session[:students] =  { "mark" => { hobby: "soccer", favorite_food: "pizza"}, "aaron" => {hobby: "music", favorite_food: "bacon"} }
+
+

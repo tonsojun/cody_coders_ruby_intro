@@ -1,0 +1,37 @@
+Okay, I hope I'm not overusing the Pokemon API and you all still find it funny.
+
+For each new student, assign them a random pokemon companion.
+
+First, rails g migration add_pokemon
+
+add a column to the students table
+
+add_column :students, :pokemon, :string
+
+run the migration.
+
+Now, when you add a new student, get a random pokemon name and then write that pokemon's name to the student table.
+
+You will need to install the httparty gem.
+
+To do that, add gem 'httparty' to your gemfile and run bundle install.
+
+Gems are libraries or plugins that you can use to have access to more functionality in your app.
+
+number = rand(1..500)
+response = HTTParty.get("https://pokeapi.co/api/v2/pokemon/#{number}")
+body = JSON.parse(response.body)
+name = body["name"]
+
+Display each student's pokemon in the web page.
+
+ALSO:
+
+Add a migration for a lucky_number column. Give each student a "lucky_number" - a random number from 1-100 - and display that in the UI. UI means user interface aka the web page
+
+Add a migration for a date column type :birthday - assign each student a random birthday (sorry not a real birthday haha) when they are created
+
+You can do that this way - rand(1..365).days.ago
+
+Experiment with formatting the displayed date somehow:
+https://stackoverflow.com/questions/22255476/rails-formatting-date

@@ -69,6 +69,9 @@ my_hash.each do |key, value|
   puts value
 end
 
+# Add a key to an existing hash like this
+
+my_hash["favorite_food"] = "Pizza"
 
 # Hashes can also be nested:
 

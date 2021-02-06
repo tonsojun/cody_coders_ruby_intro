@@ -1,0 +1,42 @@
+OK, now that you've learned how to create forms.
+
+Let's imitate a database.
+
+Create a new rails app. Create a root page at pages/main in the same way, with a pages controller.
+
+Initialize the session variable session[:students] the same was as in the last assignment. Create it as an array or a hash (your preference)
+
+Add a form on pages/main with "name" and "hobby" text inputs.
+
+When the user fills out the form, you should add a student to session[:students] with the user input.
+
+if an array, push adds an element to the array
+
+session[:students].push({name: "Geo", hobby: "Ruby"})
+
+If a hash
+
+session[:students][session[:students].length] = {name: "Geo", hobby: "Ruby"}
+
+
+Add a controller method/route for the form, something like post "/add" routing to pages#add
+
+Then, below the form, print session[:students]
+
+array: 
+session[:students] = [{name: "mark", hobby: "hiking"}, {name: "aaron", hobby: "music"}]
+
+hash:
+session[:students] = { 1: {name: "mark", hobby: "hiking"}, 2: {name: "aaron", hobby: "music"} }
+
+So depending on how you STRUCTURE THE DATA USING A DATA STRUCTURE, your code will look a little different.
+
+Then, iterate over the students in your pages/main and display the created students. Probably will look something like this:
+
+<% session[:students].each do |student| %>
+Name: <%= student[:name] %>
+Hobby: <%= student[:hobby] %>
+<% end %>
+
+There is a limit on the length of the session variable so this will probably freeze eventually, don't worry about it.
+

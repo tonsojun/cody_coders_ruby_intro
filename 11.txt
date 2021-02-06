@@ -1,0 +1,52 @@
+Time to add a database!
+
+Instead of a session variable, let's use a database.
+
+Rails g migration create_students
+
+This creates a migration file.
+
+Edit the migration file:
+
+    create_table :students do |t|
+      t.string :name
+      t.string :hobby
+      t.timestamps
+    end
+
+    run the migration with rake db:create (creates DB) and rake db:migrate (runs migration/adds table)
+
+Now, instead of writing new students to a session variable, write them to the DB.
+
+Two ways to do this - 
+
+student = Student.new(name: params[:name], hobby: params[:hobby])
+student.save
+
+Student.create(name: params[:name], hobby: params[:hobby])
+
+This writes a row to the database.
+
+Query for all students in the database with Student.all
+
+pass a controller variable to the view by using an @ sign
+
+@students = Student.all
+
+Display these in the same way on the web page.
+
+
+Open your rails console
+
+Here, you can interact with your rails app from the command line.
+
+Add some test students from the console:
+
+Student.create(name: "aaron", hobby: "music")
+
+Two more things to add to the app
+
+On the main student page, show the current student count. Can be queried with Student.count .
+
+Also, display the newest student - can be queried with Student.last
+

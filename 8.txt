@@ -1,0 +1,105 @@
+Let's bring it back to Rails.
+
+Make a new rails app
+
+rails new routes
+
+Let's create plain HTML forms in rails.
+
+Rails forms are protected with an authenticity token that ensures the HTTP request originated from within your rails application.
+
+This is to theoretically protect your Rails app from hackers and will reject all requests that don't have the token within them.
+
+Naturally, when you create an API in Rails you turn this off.
+
+ <form action="/increase" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+  <input type="submit" value="increase">
+</form> 
+
+Root your rails application to a view named main.
+
+rails g controller pages
+
+add a method to the pages controller which is empty
+
+def main
+end
+
+Controller methods in rails automatically render the view with the same name in the views folder.
+
+add views/pages/main.html.erb
+
+Just put a header tag on the page:
+<h1>Number Game</h1>
+
+Add a route which makes the rails root URL go to your main page
+
+root to: "pages#main"
+
+So now, start your server and go to localhost:3000/
+
+You should see the number game header.
+
+Now, add a route for the increase method to the routes.rb
+
+  post 'increase', to: 'pages#increase'
+
+Once again, "pages" here refers to the controller and "increase" is the controller in the method.
+
+This means "when the rails app receives a post request to the route /increase, then run the increase method in the pages controller"
+
+add the method to the pages controller
+
+def increase
+end
+
+Add a binding.pry or a print statement 
+puts "got here"
+
+to the controller method
+
+Pry is very important to learn how to use, I use it all the time. It freezes your code in place at a certain point and lets you see what's going on.
+
+https://learn.co/lessons/debugging-with-pry
+
+Once you confirm that pushing the button triggers the controller method, let's add some code
+
+use a session variable for the current number.
+
+Start it off at 1
+
+session[:number] = 1 if !session[:number]
+
+This should probably go in the pages#main controller method
+
+This initializes the number at 1 if it doesn't exist
+
+session variables are used for shopping carts or other variables that should persist throughout your "session" or time using the app.
+
+See examples in my pokemon app
+https://github.com/mdonagh/new-pokemon
+
+Then, we will increase the number by 1.
+
+Then, display the number on the main page with
+
+<%= session[:number] %>
+
+So you should be able to click "increase" and see the number go up by 1 each time.
+
+IMPORTANT - the controller method will try to render a view named "pages/add" automatically after each time it is run. We don't want this and it should route back to the main page. So at the end of the controller method, add
+redirect_to "/"
+
+This redirects back to the GET request "/" which routes to pages/main
+
+Now, my challenge for you - 
+
+Create new controller methods at
+
+post "/subtract"
+post "/double"
+
+These should subtract 1 or double the current number.
+
+

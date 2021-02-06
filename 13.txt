@@ -1,0 +1,14 @@
+Add a delete student button on each row next to the student's information
+
+In REST API's, deleting something should be a delete request.
+
+So what we do is get the student's ID, create a form with a hidden input containing the student's ID, create a controller method under "/delete" (don't worry about using an ID param), and then run delete.
+
+ <form action="/students" method="delete">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+  <%= hidden_field_tag :id, student.id -%>
+</form> 
+
+add a controller method "destroy"
+
+Destroy a student with Student.find(params[:id]).destroy
