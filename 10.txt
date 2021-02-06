@@ -3,4 +3,33 @@ Use strings.
 
 session[:students] =  { "mark" => { hobby: "soccer", favorite_food: "pizza"}, "aaron" => {hobby: "music", favorite_food: "bacon"} }
 
+Now, we're going to create a "show" page. 
+
+Add a route
+
+get "students/show/:name" => "pages#show"
+
+Add the show method and view.
+
+def show
+end
+
+views/pages/show
+
+Here, the colon variable is a variable that is passed into the controller method and the view under the key :name.
+
+Called a URL parameter.
+
+params[:name]
+
+So now, use the params[:name] to read that student's information from the session[:students] hash. Print it onto the new page.
+
+<%= session[:students][params[:name]][:hobby] %>
+<%= session[:students][params[:name]][:favorite_food] %>
+
+Add a link back to the main page on the show page.
+
+<a href="/">Back to all students</a>
+
+After you've got this working, add a new field to the form - something like "favorite_band", "home_town", or whatever and then save/display that as well.
 
