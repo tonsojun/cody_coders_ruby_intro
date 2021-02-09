@@ -46,7 +46,7 @@ difference = 10 - 5
 puts difference
 
 product = 5 * 5
-puts production
+puts product
 
 quotient = 5 / 5
 puts quotient
@@ -76,18 +76,22 @@ end
 
 # You can see here - the method returns true or false - a "boolean" value. Then, we are checking that against our expectation
 
-assert_equal true, is_number_five?(5), "Should return true"
 
-assert_equal false, is_number_five?(6), "Should return false"
+# To run tests, do the following:
 
-# Notice - one of the quirks of Ruby is you can leave out the enclosing parentheses on functions whenever you think it improves style.
-# Don't do it too much though
+# gem install rspec
+# gem install rspec-expectations
+# rspec --init
 
-assert_equal(true, is_number_five?(5), "Should return true")
+# Then, run rspec 1.rb , or rpsec whatever.rb
 
-assert_equal(false, is_number_five?(6), "Should return false")
+# The hash below means method named is_number_five?
+describe "#is_number_five?" do
+  it "Should return true" do
+    expect(is_number_five?(5)).to eq(true)
+  end
 
-
-
-
-
+  it "Should return false" do
+    expect(is_number_five?(6)).to eq(false)
+  end
+end
