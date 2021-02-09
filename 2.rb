@@ -7,13 +7,13 @@
 # You can access elements in the array with this syntax
 
 
-# array = ["cat", "dog", "wolf"]
+array = ["cat", "dog", "wolf"]
 
-# puts array[0]
+puts array[0]
 # => "cat"
 
 
-# puts array[1]
+puts array[1]
 # => 'dog'
 
 
@@ -21,7 +21,7 @@
 
 # The last element is usually accessed like this:
 
-# array[array.length - 1]
+array[array.length - 1]
 # => "wolf"
 
 # Write a function, with a test as seen in the last assignment which takes an array as an argument 
