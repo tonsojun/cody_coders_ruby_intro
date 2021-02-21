@@ -1,8 +1,8 @@
 # Your assignment is to use the examples below to write a method called "double" which takes an integer parameter
-# Double it, and return the doubled value.
-# Then write a test confirming the method works.
+# Double it, and return the doubled value. (completed)
+# Then write a test confirming the method works. (not completed test is not working)
 
-# Also write a method called add_five with return value and two tests.
+# Also write a method called add_five with return value and two tests. (completed minus tests)
 
 # Also let me say - I know that there are lots of websites that offer similar curriculum. I think it's better for your own
 # learning to do everything on your own on your computer rather than let some website curate the experience for you
@@ -11,6 +11,28 @@
 
 
 # ALL OF YOUR WORK HERE - just post either the code or the files in #standup
+
+# double method
+def multiply (num)
+  doubleNum = num * 2
+  doubleNum
+end
+
+multiply(2)
+multiply(5)
+multiply(25)
+
+
+
+# add five method
+def addFive (num)
+  newVal = num + 5
+  puts newVal
+end
+
+addFive(10)
+addFive(12)
+addFive(20)
 
 # Variables
 
@@ -94,4 +116,24 @@ describe "#is_number_five?" do
   it "Should return false" do
     expect(is_number_five?(6)).to eq(false)
   end
+end
+
+
+describe "#double" do
+  it "Should double 5 to 10" do
+    expect(double(5)).to eq(10)
+  end
+end
+
+
+describe "#addFive" do
+  it "Should Add 5 to 10 and get 15" do
+    expect(addFive(10)).to eq(15)
+  end
+end
+
+describe "#addFive" do
+  it "Should add 5 to 12 and get 17" do
+    expect(addFive(5)).to eq(17)
+  end 
 end

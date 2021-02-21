@@ -97,6 +97,21 @@ puts nested_hash[:first_student][:name]
 #   "aaron" => 'javascript'
 # }
 
+def student_languages(arr1, arr2)
+  acc = {}
+  arr1.each do |name|
+    arr2.each do |language|
+      acc[arr1[name]] = acc[arr2[name]]
+    end
+  end
+  return acc
+end
+
+students = ["Joe", "Kalei", "Tristan"]
+languges = ["Ruby", "Javascript", "Python"]
+
+student_languages(students, languages)
+
 # If the two arrays are not the same length, return false. Write a test using assert_equal!!!
 # write a test for happy path - input is normal and returns the expected return value
 # and for sad path - input has mismatched arrays. Google happy path sad path testing
