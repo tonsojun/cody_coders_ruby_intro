@@ -1,6 +1,5 @@
-
-require "test/unit/assertions"
-include Test::Unit::Assertions
+require 'test/unit'
+extend Test::Unit::Assertions
 
 # Write a method, which given two arrays, one of student names, one of student languages, returns a hash like this:
 
@@ -18,15 +17,19 @@ def student_languages(arr1, arr2)
     return false
   else
     combined = Hash[arr1.zip(arr2)]
-    puts combined
+    return combined
   end  
 end
 
 students = ["Joe", "Kalei", "Tristan", "Vernon", "Melissa"]
 language = ["Ruby", "Javascript", "Python", "Ruby", "C++"]
+language2 = ["C++", "Python"]
 
 student_languages(students, language)
-
+#happy path input is normal with expected result
+assert_equal student_languages(students, language), {"Joe"=>"Ruby", "Kalei"=>"Javascript", "Tristan"=>"Python", "Vernon"=>"Ruby", "Melissa"=>"C++"}, "Test passed, Great Job!"
+#sad path mismatched arrays
+assert_equal student_languages(students, language2), {"Joe"=>"C++", "Kalei"=>"Python", "Tristan"=> nil, "Vernon"=>nil, "Melissa"=>nil}, "Test Failed, check arrray size, arrays size should match"
 # Write a method which takes a hash in the format as this:
 
 # your_hash = {

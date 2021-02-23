@@ -1,3 +1,6 @@
+require 'test/unit'
+extend Test::Unit::Assertions
+
 names = ["mark", "aaron", "steven", "mary", "hermitcrab"]
 
 def print_names_ending_with_n(names)
@@ -11,7 +14,7 @@ def print_names_ending_with_n(names)
   end
 end
 
-puts print_names_ending_with_n(names)
+print_names_ending_with_n(names)
 
 # This is a classic problem:
 
@@ -37,7 +40,7 @@ def fizzbuzz()
   end
 end
 
-puts fizzbuzz()
+fizzbuzz()
 
 
 # write a method that takes a string as a parameter. return the string in reverse using a for loop (not ruby's .reverse method). 
@@ -56,7 +59,6 @@ def reverseString(string)
 end
 
 nameString = 'Joe'
-puts reverseString(nameString)
+reverseString(nameString)
 
-#write assertion test
-
+assert_equal reverseString(nameString), "eoJ", "Test passed Pew! Pew! Pew! Peeeeeeewwwww!"
