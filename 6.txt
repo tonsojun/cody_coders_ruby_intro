@@ -22,7 +22,6 @@ action is the destination URL of the form. Method is the HTTP request type ie GE
 name is used to determine what the variable is named in the requests
 
 Create a .html page like this
-
 <html>
 <body>
 your stuff goes here
