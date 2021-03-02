@@ -4,8 +4,7 @@ response = HTTParty.get('http://api.stackexchange.com/2.2/questions?site=stackov
 
 options = {
   body: {
-    my_name: "Mark",
-    my_hobby: "Soccer"
+    current_time: Time.now
   }
 }
 
